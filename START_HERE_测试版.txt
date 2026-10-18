@@ -1,0 +1,21 @@
+VocabAudio 2.0 Beta - Windows Test Edition
+==========================================
+Your machine already has Python 3.13 from V1.1.
+
+1) Extract the ZIP to a NEW folder (do not overwrite V1.1).
+2) Double-click START_APP.bat to start this beta.
+3) If dependencies are missing, run INSTALL_DEPENDENCIES.bat once.
+4) Choose a DOCX or text-based PDF, check the words, choose US/UK.
+5) Set speed, word pause, repetition, output file name/folder, then generate MP3.
+6) Theme toggle is at the TOP of the RIGHT settings panel and persists.
+7) For removal, exit VocabAudio and run Uninstall_VocabAudio.bat.
+   Only recognized app files and AppData/VocabAudio config/cache are removed.
+   Your PDFs, DOCXs, exported MP3s, and Python remain safe.
+
+Optional independent Windows EXE build:
+- Double-click BUILD_EXE.bat (requires internet on first build).
+- Or upload this repository to GitHub and run its Windows build workflow.
+- The resulting portable release needs NO Python installed on end-user PCs.
+
+This ZIP contains a RUNNABLE Python beta, NOT a precompiled Windows EXE.
+Third-party online dictionary availability could not be verified in the build environment.

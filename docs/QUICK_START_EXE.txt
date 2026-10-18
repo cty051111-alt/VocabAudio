@@ -1,0 +1,14 @@
+VocabAudio 2.0 Beta - Windows Portable
+====================================
+1. Extract the entire archive into a dedicated folder.
+2. Double-click VocabAudio.exe. No Python installation is needed.
+3. Import a DOCX, text-based PDF, TXT or CSV word list. Native .wps requires DOCX export first.
+4. Verify the words. Choose US/UK, speed, pause and repeat count.
+5. Click Generate MP3. Internet required for third-party voice requests.
+6. Use the theme button to switch between dark/light UI. Preferences are saved locally.
+7. To uninstall, close VocabAudio, then double-click Uninstall_VocabAudio.bat.
+   This removes only known program files and private VocabAudio settings/cache.
+   Personal documents, exported MP3s, and Python remain untouched.
+
+Note: The app is not code-signed. The dictionary provider is third-party and can change or block access.
+Audio generation can partially fail; inspect the failure report for missing entries.

@@ -1,0 +1,61 @@
+name: Build VocabAudio Windows Beta
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-dev.txt "pyinstaller>=6.11"
+      - name: Run automated tests
+        run: python -m pytest -q
+      - name: Build portable single-file EXE
+        shell: pwsh
+        run: |
+          python -m PyInstaller --noconfirm --clean --onefile --windowed --name VocabAudio --icon assets/VocabAudio.ico --add-data "assets/VocabAudio.ico;assets" --collect-all imageio_ffmpeg --collect-all pymupdf --hidden-import fitz app.py
+          if ($LASTEXITCODE -ne 0) { throw 'PyInstaller failed' }
+      - name: Offline runtime smoke test
+        shell: pwsh
+        run: |
+          $proc = Start-Process -FilePath .\dist\VocabAudio.exe -ArgumentList '--self-test','--self-test-report','self-test.txt' -Wait -PassThru
+          if ($proc.ExitCode -ne 0) { throw 'Executable self-test failed' }
+          if (-not (Test-Path self-test.txt)) { throw 'Executable self-test report missing' }
+          if ((Get-Content self-test.txt -Raw) -ne 'VocabAudio v2 self-test: PASS') { throw 'Invalid self-test report' }
+          Get-Content self-test.txt
+      - name: Create beta release ZIP
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path release/scripts | Out-Null
+          Copy-Item dist/VocabAudio.exe release/
+          Copy-Item self-test.txt release/
+          Copy-Item LICENSE release/
+          Copy-Item Uninstall_VocabAudio.bat release/
+          Copy-Item scripts/uninstall.ps1 release/scripts/
+          Copy-Item docs/QUICK_START_EXE.txt release/START_HERE.txt
+          Compress-Archive -Path release/* -DestinationPath VocabAudio_Windows_Beta.zip -Force
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VocabAudio-Windows-Beta
+          path: VocabAudio_Windows_Beta.zip
+      - name: Publish versioned prerelease
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v2.0.0-beta
+          target_commitish: ${{ github.sha }}
+          name: VocabAudio 2.0 Beta
+          body_path: RELEASE_NOTES_v2.0.0-beta.md
+          files: VocabAudio_Windows_Beta.zip
+          prerelease: true
+          generate_release_notes: true
