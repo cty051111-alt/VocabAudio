@@ -2,7 +2,8 @@
 
 [下载 2.1 Beta 升级版 / Download 2.1](https://github.com/cty051111-alt/VocabAudio/releases/tag/v2.1.0-beta) · [保留的 2.0 Beta / Previous 2.0](https://github.com/cty051111-alt/VocabAudio/releases/tag/v2.0.0-beta)
 
-将词汇表或图片转换为可校对的英文词表，再生成跟读、听写用 MP3。
+将词汇表或图片转换为可校对的英文词表，再生成跟读、听写用 MP3。  
+Turn vocabulary documents or images into editable English word lists and MP3s for pronunciation and dictation practice.
 
 [English guide](README_EN.md) · [项目仓库](https://github.com/cty051111-alt/VocabAudio)
 
@@ -18,7 +19,8 @@
 
 ## 本次升级
 
-- 按九分学长智能练习插件的风格重新实现桌面 UI：圆角卡片、细边框、扁平按钮和统一控件，保留浅色 / 深色。
+- 全面优化桌面 UI：更新圆角卡片、按钮、输入框、下拉框和滑块，保留浅色 / 深色主题。  
+Improved the desktop UI with refreshed cards, buttons, inputs, menus and sliders, while keeping light and dark themes.
 - 支持 PNG、JPG、BMP、WebP、TIFF 图片和剪贴板截图，在本机识别印刷中英文。
 - 增加识别文字校对、复制、TXT 导出和词表搜索。
 - 沿用 PDF、DOCX、TXT、CSV 词汇提取，以及原有音频合成、重复和失败报告。
