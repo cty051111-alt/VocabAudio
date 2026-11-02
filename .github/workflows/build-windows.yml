@@ -5,6 +5,9 @@ on:
   push:
     branches: [main, 'feat/**']
     tags: ['v2.1.*']
+env:
+  PYTHONUTF8: '1'
+  PYTHONIOENCODING: utf-8
 permissions:
   contents: read
 jobs:
@@ -38,6 +41,14 @@ jobs:
         with:
           name: VocabAudio-2.1-Beta-Windows
           path: release
+      - name: Validate UTF-8 bilingual release notes
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          text = Path('RELEASE_NOTES_v2.1.0-beta.md').read_text(encoding='utf-8', errors='strict')
+          assert '\ufffd' not in text, 'Release notes contain replacement characters'
+          assert 'What' in text and any('\u4e00' <= c <= '\u9fff' for c in text), 'Bilingual notes are required'
+          PY
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: v2.1.0-beta
