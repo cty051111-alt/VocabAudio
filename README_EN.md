@@ -1,6 +1,8 @@
 # VocabAudio 2.1 Beta
 
-Turn vocabulary documents and images into editable English word lists and pronunciation MP3s. [����˵��](README.md)
+[下载 2.1 Beta 升级版 / Download 2.1](https://github.com/cty051111-alt/VocabAudio/releases/tag/v2.1.0-beta) · [保留的 2.0 Beta / Previous 2.0](https://github.com/cty051111-alt/VocabAudio/releases/tag/v2.0.0-beta)
+
+Turn vocabulary documents and images into editable English word lists and pronunciation MP3s. [中文说明](README.md)
 
 ## Windows
 
@@ -11,7 +13,7 @@ Extract the entire `VocabAudio_2.1_Beta_Windows.zip` and launch `VocabAudio.exe`
 3. Review the image beside its recognized text. Edit, copy, or save the text as TXT.
 4. Replace or append to the English vocabulary list, then adjust pronunciation settings and generate MP3.
 
-The redesigned Qt desktop controls follow the rounded cards, subtle outlines and spacing of the user's �ŷ�ѧ�� smart-practice extension. Both light and dark themes remain available. Vocabulary extraction and audio composition use the existing core.
+The redesigned Qt desktop controls follow the rounded cards, subtle outlines and spacing of the user's 九分学长 smart-practice extension. Both light and dark themes remain available. Vocabulary extraction and audio composition use the existing core.
 
 ## Privacy and limits
 
