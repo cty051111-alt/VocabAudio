@@ -1,14 +1,19 @@
-VocabAudio 2.0 Beta - Windows Portable
-====================================
-1. Extract the entire archive into a dedicated folder.
-2. Double-click VocabAudio.exe. No Python installation is needed.
-3. Import a DOCX, text-based PDF, TXT or CSV word list. Native .wps requires DOCX export first.
-4. Verify the words. Choose US/UK, speed, pause and repeat count.
-5. Click Generate MP3. Internet required for third-party voice requests.
-6. Use the theme button to switch between dark/light UI. Preferences are saved locally.
-7. To uninstall, close VocabAudio, then double-click Uninstall_VocabAudio.bat.
-   This removes only known program files and private VocabAudio settings/cache.
-   Personal documents, exported MP3s, and Python remain untouched.
+VocabAudio 2.1 Beta - Windows Portable
+=====================================
+完整解压后运行 VocabAudio.exe，无需安装 Python。
 
-Note: The app is not code-signed. The dictionary provider is third-party and can change or block access.
-Audio generation can partially fail; inspect the failure report for missing entries.
+1. 导入文档或图片，也可拖入单个文件。
+2. 复制截图后按 Ctrl+Shift+V 粘贴图片。
+3. 对照原图校对文字，复制 / 保存 TXT，或提取英文词汇。
+4. 校对词表，设置美式 / 英式、语速、停顿与重复次数，生成 MP3。
+
+图片识别在本机完成，不上传图片；模型随包提供。
+音频生成需要联网，英文词条将发送到第三方发音服务。
+支持清晰印刷中英文；模糊、手写和复杂多栏请人工校对。
+扫描 PDF 请先导出图片。原生 WPS / DOC 请另存为 DOCX。
+首次启动单文件 EXE 需要解压依赖，可能稍慢。
+
+SOURCE.zip 包含完整应用源码与构建说明。
+第三方许可见 THIRD_PARTY_NOTICES.md 和 licenses 文件夹。
+
+卸载：关闭程序后运行 Uninstall_VocabAudio.bat，并核对删除范围。
