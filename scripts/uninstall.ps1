@@ -3,8 +3,8 @@
 $ErrorActionPreference = 'Stop'
 $Root = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $DataRoot = Join-Path $env:LOCALAPPDATA 'VocabAudio'
-$AllowedFiles = @('VocabAudio.exe','app.py','vocab_core.py','settings_store.py','START_APP.bat','INSTALL_DEPENDENCIES.bat','Uninstall_VocabAudio.bat','requirements.txt','requirements-dev.txt','README.md','README_EN.md','LICENSE','CHANGELOG.md','CONTRIBUTING.md','SECURITY.md','RELEASE_NOTES_v1.1.0.md','RELEASE_NOTES_v2.0.0-beta.md')
-$AllowedFolders = @('scripts','tests','docs','.github','__pycache__')
+$AllowedFiles = @('VocabAudio.exe','app.py','desktop_ui.py','image_ocr.py','vocab_core.py','settings_store.py','START_APP.bat','INSTALL_DEPENDENCIES.bat','Uninstall_VocabAudio.bat','requirements.txt','requirements-dev.txt','README.md','README_EN.md','LICENSE','THIRD_PARTY_NOTICES.md','SOURCE.zip','START_HERE.txt','self-test.txt','build-environment.txt','requirements-lock.txt','VALIDATION.md','RELEASE_NOTES_v2.1.0-beta.md','CHANGELOG.md','CONTRIBUTING.md','SECURITY.md','RELEASE_NOTES_v1.1.0.md','RELEASE_NOTES_v2.0.0-beta.md')
+$AllowedFolders = @('scripts','tests','docs','licenses','assets','.github','__pycache__')
 Write-Host 'VocabAudio Safe Uninstall' -ForegroundColor Cyan
 Write-Host "Program folder: $Root"
 Write-Host "Settings/cache folder: $DataRoot"
